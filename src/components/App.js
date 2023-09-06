@@ -1,5 +1,5 @@
 import React from "react";
-import RecipePage from "./RecipeIndex";
+import RecipePage from "./RecipePage";
 
 function App() {
   return (

@@ -6,7 +6,7 @@ function Header({ searchInput, setSearchInput }) {
   return (
     <div>
       <Search searchInput={searchInput} setSearchInput={setSearchInput} />
-      <NewRecipeForm />
+      <NewRecipeForm/>
     </div>
   );
 }
