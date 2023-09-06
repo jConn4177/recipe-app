@@ -1,0 +1,32 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Chicken Katsu Curry",
+      "instructions": "",
+      "ingredients": [],
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "Chicken Adobo",
+      "instructions": "",
+      "ingredients": [],
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "Shrimp Fried Rice",
+      "instructions": "",
+      "ingredients": [],
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "",
+      "instructions": "",
+      "ingredients": [],
+      "image": ""
+    }
+  ]
+}
