@@ -9,22 +9,23 @@ function RecipeIndex({ searchInput }) {
       .then(setRecipes);
   }, []);
 
-  const searchedRecipes = recipes.filter((recipe) => {
-    return recipe.name.toLowerCase().includes(searchInput.toLowerCase());
-  });
+  // const searchedRecipes = recipes.filter((recipe) => {
+  //   return recipe.name.toLowerCase().includes(searchInput.toLowerCase());
+  // });
 
-  const recipeCards = searchedRecipes.map((recipes) => {
+  console.log(recipes);
+  const recipeCards = recipes.map((recipe) => {
     return (
       <RecipeCard
-        key={recipes.id}
-        name={recipes.name}
-        image={recipes.image}
-        ingredients={recipes.ingredients}
+        key={recipe.id}
+        name={recipe.name}
+        image={recipe.image}
+        ingredients={recipe.ingredients}
       />
     );
   });
 
-  return { recipeCards };
+  return <>{recipeCards}</>;
 }
 
 export default RecipeIndex;

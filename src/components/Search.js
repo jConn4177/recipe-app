@@ -1,7 +1,7 @@
 import React from "react";
 
 function Search({ searchInput, setSearchInput }) {
-  <div className="ui large fluid icon input">
+  <div>
     <input
       value={searchInput}
       type="text"

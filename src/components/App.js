@@ -1,12 +1,11 @@
-
-
 import React from "react";
-import RecipeCard from "./RecipeCard";
+import RecipePage from "./RecipeIndex";
+
 function App() {
   return (
     <div className="App">
       <h1>Recipe Cards</h1>
-      <RecipeCard />
+      <RecipePage />
     </div>
   );
 }
