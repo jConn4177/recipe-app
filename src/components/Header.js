@@ -1,12 +1,12 @@
 import React from "react";
 import Search from "./Search";
-import NewRecipe from "./NewRecipe";
+import NewRecipeForm from "./NewRecipeForm";
 
 function Header({ searchInput, setSearchInput }) {
   return (
     <div>
       <Search searchInput={searchInput} setSearchInput={setSearchInput} />
-      <NewRecipe />
+      <NewRecipeForm />
     </div>
   );
 }

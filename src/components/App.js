@@ -4,8 +4,10 @@ import RecipePage from "./RecipeIndex";
 function App() {
   return (
     <div className="App">
-      <h1>Recipe Cards</h1>
+      <h1 className="app-title">TasteBud: The Ultimate Flavor Buddy</h1>
+      <div className="card-container">
       <RecipePage />
+      </div>
     </div>
   );
 }
