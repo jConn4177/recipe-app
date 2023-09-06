@@ -3,30 +3,78 @@
     {
       "id": 1,
       "name": "Chicken Katsu Curry",
-      "instructions": "",
-      "ingredients": [],
-      "image": ""
+      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "ingredients": [
+        "garlic",
+        "vegetable oil",
+        "onion",
+        "tomato paste",
+        "Worcestershire sauce",
+        "curry powder",
+        "salt",
+        "sugar",
+        "potato",
+        "carrot",
+        "chicken stock",
+        "constarch",
+        "butter",
+        "chicken breast",
+        "AP flour",
+        "egg",
+        "breadcrumbs",
+        "rice"
+      ],
+      "image": "https://images.unsplash.com/photo-1624517607896-bb5dfd8f5764?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "id": 2,
       "name": "Chicken Adobo",
-      "instructions": "",
-      "ingredients": [],
-      "image": ""
+      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "ingredients": [
+        "chicken thighs",
+        "soy sauce",
+        "white vinegar",
+        "onion",
+        "garlic",
+        "peppercorns",
+        "brown sugar",
+        "bay leaves",
+        "green onion"
+      ],
+      "image": "https://images.unsplash.com/photo-1567121938596-6d9d015d348b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       "id": 3,
       "name": "Shrimp Fried Rice",
-      "instructions": "",
-      "ingredients": [],
-      "image": ""
+      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "ingredients": [
+        "oyster sauce",
+        "rice",
+        "ginger",
+        "garlic",
+        "msg",
+        "soy sauce",
+        "shrimp",
+        "rice",
+        "green onions",
+        "onion",
+        "garlic",
+        "carrots",
+        "celery",
+        "cilantro",
+        "egg",
+        "vegetable oil",
+        "sesame seeds",
+        "sesame oil"
+      ],
+      "image": "https://images.unsplash.com/photo-1551326844-4df70f78d0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80"
     },
     {
       "id": 4,
-      "name": "",
-      "instructions": "",
-      "ingredients": [],
-      "image": ""
+      "name": "BLT Sandwich",
+      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "ingredients": ["bread", "bacon", "lettuce", "tomato", "mayonnaise"],
+      "image": "https://images.unsplash.com/photo-1619096252214-ef06c45683e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1925&q=80"
     }
   ]
 }
