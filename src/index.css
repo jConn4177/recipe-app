@@ -13,10 +13,11 @@ code {
 }
 
 .app-title {
+  padding-top: 3%;
   font-size: 300%;
   text-align: center;
   border-bottom: 5px solid gray; 
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   color: gray;
 }
 
@@ -40,7 +41,7 @@ code {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 .card-photo {
@@ -69,4 +70,3 @@ p.card-ingred {
   text-align: center;
 
 }
-
