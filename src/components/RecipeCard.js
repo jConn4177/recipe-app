@@ -1,30 +1,30 @@
 import React from "react";
 
 function RecipeCard() {
-  const cards = [
+  const cards = [ 
     {
       id: 1,
       name: "Chicken Katsu Curry",
-      ingredients: "",
-      imageSrc: "image1.jpg",
+      ingredients: "chicken",
+     imageSrc: "",
     },
     {
       id: 2,
       name: "Chicken Adobo",
       ingredients: "",
-      imageSrc: "image2.jpg",
+      imageSrc: "",
     },
     {
       id: 3,
       name: "Shrimp Fried Rice",
-      ingredients: "",
-      imageSrc: "image3.jpg",
+      ingredients: "shrimp rice",
+      imageSrc: "",
     },
     {
       id: 4,
       name: "Card 4",
-      ingredients: "",
-      imageSrc: "image4.jpg",
+      ingredients: "card ",
+      imageSrc: "",
     },
   ];
   return (
@@ -46,3 +46,4 @@ function RecipeCard() {
 }
 
 export default RecipeCard;
+
