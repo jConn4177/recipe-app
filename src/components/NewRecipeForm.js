@@ -40,7 +40,7 @@ function NewRecipeForm() {
   return (
     <div>
       <h2>Add a New Recipe</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="app-form">
         <div>
           <label htmlFor="name">Recipe Name:</label>
           <input
@@ -62,7 +62,7 @@ function NewRecipeForm() {
               onChange={(e) => handleIngredientChange(index, e.target.value)}
             />
           ))}
-          <button type="button" onClick={handleAddIngredient}>
+          <button className="add-ing-button" type="button" onClick={handleAddIngredient}>
             Add Ingredient
           </button>
         </div>
@@ -76,7 +76,7 @@ function NewRecipeForm() {
             required
           />
         </div>
-        <button type="submit">Add Recipe</button>
+        <button className="add-recipe-button" type="submit">Add Recipe</button>
       </form>
     </div>
   );
