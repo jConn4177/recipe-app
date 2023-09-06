@@ -1,10 +1,12 @@
-import React from "react";
-import RecipePage from "./RecipePage.js";
 
+
+import React from "react";
+import RecipeCard from "./RecipeCard";
 function App() {
   return (
-    <div>
-      <RecipePage />
+    <div className="App">
+      <h1>Recipe Cards</h1>
+      <RecipeCard />
     </div>
   );
 }

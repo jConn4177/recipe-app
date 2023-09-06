@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* RecipeCard.css */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.card {
+  flex-basis: calc(25% - 20px); /* Adjust the card width as needed */
+  background-color: #8f1818;
+  border: 1px solid #270b0b;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-photo {
+  max-height: 200px; /* Adjust the maximum height of the photo */
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1rem; /* Smaller font size */
+  margin: 0;
+}
+
+p {
+  font-size: 0.8rem; /* Smaller font size */
+  color: #888;
+}
