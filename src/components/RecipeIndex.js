@@ -16,10 +16,10 @@ function RecipeIndex({ searchInput }) {
   const recipeCards = searchedRecipes.map((recipes) => {
     return (
       <RecipeCard
-        key={recipe.id}
+        key={recipes.id}
         name={recipes.name}
-        image={recipe.image}
-        ingredients={recipe.ingredients}
+        image={recipes.image}
+        ingredients={recipes.ingredients}
       />
     );
   });

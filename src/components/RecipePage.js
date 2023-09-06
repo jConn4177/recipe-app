@@ -7,7 +7,7 @@ function RecipePage() {
   return (
     <div>
       <Header searchInput={searchInput} setSearchInput={setSearchInput} />
-      <RecipeIndex searchInput={SearchInput} />
+      <RecipeIndex searchInput={searchInput} />
     </div>
   );
 }
