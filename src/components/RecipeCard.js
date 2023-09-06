@@ -1,49 +1,20 @@
 import React from "react";
 
-function RecipeCard() {
-  const cards = [ 
-    {
-      id: 1,
-      name: "Chicken Katsu Curry",
-      ingredients: "chicken",
-     imageSrc: "",
-    },
-    {
-      id: 2,
-      name: "Chicken Adobo",
-      ingredients: "",
-      imageSrc: "",
-    },
-    {
-      id: 3,
-      name: "Shrimp Fried Rice",
-      ingredients: "shrimp rice",
-      imageSrc: "",
-    },
-    {
-      id: 4,
-      name: "Card 4",
-      ingredients: "card ",
-      imageSrc: "",
-    },
-  ];
+function RecipeCard({ key, name, image, ingredients }) {
   return (
     <div>
       <h1>Card Layout</h1>
       <div className="card-container">
-        {cards.map((card, index) => (
-          <div className="card" key={index}>
-            <img src={card.imageSrc} alt={card.title} />
-            <div className="card-content">
-              <h3>{card.name}</h3>
-              <p>{card.ingredients}</p>
-            </div>
+        <div className="card" key={key}>
+          <img src={image} alt={name} />
+          <div className="card-content">
+            <h3>{name}</h3>
+            <p>{ingredients}</p>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 }
 
 export default RecipeCard;
-
