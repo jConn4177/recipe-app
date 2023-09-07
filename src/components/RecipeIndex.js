@@ -12,14 +12,17 @@ function RecipeIndex({ searchInput }) {
       .then(setRecipes);
   }, []);
 
+  const searchWords = searchInput.toLowerCase().split(" ");
   const searchedRecipes = recipes.filter((recipe) => {
-    const searchTerm = searchInput.toLowerCase();
-    return (
-      recipe.name.toLowerCase().includes(searchTerm) ||
-      recipe.ingredients.some((ingredient) =>
-        ingredient.toLowerCase().includes(searchTerm)
-      )
-    );
+    return searchWords.every((word) => {
+      const searchTerm = word.trim();
+      return (
+        recipe.name.toLowerCase().includes(searchTerm) ||
+        recipe.ingredients.some((ingredient) =>
+          ingredient.toLowerCase().includes(searchTerm)
+        )
+      );
+    });
   });
 
   const handleRecipeClick = (recipe) => {
@@ -35,16 +38,18 @@ function RecipeIndex({ searchInput }) {
           onClose={() => setSelectedRecipe(null)} // Pass a function to close RecipeDisplay
         />
       ) : (
-        <div className="row">
+        <div className="row g-3 d-flex">
           {searchedRecipes.map((recipe) => (
-            <div className="col-2">
-              <RecipeCard
-                key={recipe.id}
-                name={recipe.name}
-                image={recipe.image}
-                ingredients={recipe.ingredients.join(", ")}
-                onClick={() => handleRecipeClick(recipe)} // Pass a function to handle clicks
-              />
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div className="card h-100">
+                <RecipeCard
+                  key={recipe.id}
+                  name={recipe.name}
+                  image={recipe.image}
+                  ingredients={recipe.ingredients.join(", ")}
+                  onClick={() => handleRecipeClick(recipe)} // Pass a function to handle clicks
+                />
+              </div>
             </div>
           ))}
         </div>
