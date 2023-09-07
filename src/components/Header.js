@@ -4,7 +4,7 @@ import NewRecipeForm from "./NewRecipeForm";
 
 function Header({ searchInput, setSearchInput }) {
   return (
-    <div className="row" id="header">
+    <div className="row g-5" id="header">
       <div className="col">
         <Search searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>
