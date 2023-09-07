@@ -26,7 +26,6 @@ function RecipeIndex({ searchInput }) {
   });
 
   const handleRecipeClick = (recipe) => {
-    console.log("clicked");
     setSelectedRecipe(recipe);
   };
 
