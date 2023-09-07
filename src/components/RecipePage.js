@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import RecipeIndex from "./RecipeIndex";
 
 function RecipePage() {
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput] = useState("");
   return (
-    <div>
-      <Header searchInput={searchInput} setSearchInput={setSearchInput} />
+    <div className="recipe-page">
+      
       <RecipeIndex searchInput={searchInput} />
     </div>
   );
