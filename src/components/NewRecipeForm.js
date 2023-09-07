@@ -48,13 +48,34 @@ function NewRecipeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Recipe submitted:", { ...recipe, imageUrl });
-    setRecipe({
-      name: "",
-      ingredients: [""],
-      instructions: [""],
-    });
-    setImageUrl("");
+
+    const newRecipe = {
+      name: recipe.name,
+      ingredients: recipe.ingredients,
+      instructions: recipe.instructions,
+      image: imageUrl,
+    };
+
+    fetch("http://localhost:8001/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRecipe),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Recipe submitted successfully");
+          setRecipe({
+            name: "",
+            ingredients: [""],
+            instructions: [""],
+          });
+          setImageUrl("");
+        } else {
+          console.error("Failed to submit recipe");
+        }
+      })
   };
 
   return (
