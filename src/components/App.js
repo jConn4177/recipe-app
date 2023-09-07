@@ -5,8 +5,8 @@ function App() {
   return (
     <div className="App">
       <h1 className="app-title">TasteBud: The Ultimate Flavor Buddy</h1>
-      <div className="card-container">
-      <RecipePage />
+      <div className="container">
+        <RecipePage />
       </div>
     </div>
   );
