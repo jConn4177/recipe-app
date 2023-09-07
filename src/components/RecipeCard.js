@@ -1,8 +1,8 @@
 import React from "react";
 
-function RecipeCard({ name, image, ingredients }) {
+function RecipeCard({ name, image, ingredients, onClick }) {
   return (
-    <div className="card">
+    <div className="card" onClick={onClick}>
       <img className="card-image" src={image} alt={name} />
       <div className="card-content">
         <h3 className="card-name">{name}</h3>
