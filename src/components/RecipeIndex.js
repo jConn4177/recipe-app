@@ -43,7 +43,7 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
       ) : (
         <div className="row g-3 d-flex">
           {searchedRecipes.map((recipe) => (
-            <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={recipe.id}>
               <div className="card h-100">
                 <RecipeCard
                   key={recipe.id}
