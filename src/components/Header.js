@@ -2,9 +2,13 @@ import React from "react";
 import Search from "./Search";
 import NewRecipeForm from "./NewRecipeForm";
 
-function Header({ searchInput, setSearchInput }) {
+function Header({ searchInput, setSearchInput, isCollapsed }) {
   return (
-    <div className="row g-5" id="header">
+    <div
+      className="row g-5"
+      id="header"
+      style={{ display: isCollapsed ? "none" : "" }}
+    >
       <div className="col">
         <Search searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import RecipeDisplay from "./RecipeDisplay";
 
-function RecipeIndex({ searchInput }) {
+function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
@@ -27,6 +27,7 @@ function RecipeIndex({ searchInput }) {
 
   const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe);
+    setIsHeaderCollapsed(true);
   };
 
   return (
@@ -34,7 +35,10 @@ function RecipeIndex({ searchInput }) {
       {selectedRecipe ? (
         <RecipeDisplay
           recipe={selectedRecipe}
-          onClose={() => setSelectedRecipe(null)} // Pass a function to close RecipeDisplay
+          onClose={() => {
+            setSelectedRecipe(null);
+            setIsHeaderCollapsed(false);
+          }} // Pass a function to close RecipeDisplay
         />
       ) : (
         <div className="row g-3 d-flex">
