@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RecipeIndex from "./RecipeIndex";
+import Header from  "./Header";
 
 function RecipePage() {
   const [searchInput, setSearchInput] = useState("");
