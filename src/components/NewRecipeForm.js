@@ -62,7 +62,11 @@ function NewRecipeForm() {
               onChange={(e) => handleIngredientChange(index, e.target.value)}
             />
           ))}
-          <button className="add-ing-button" type="button" onClick={handleAddIngredient}>
+          <button
+            className="add-ing-button"
+            type="button"
+            onClick={handleAddIngredient}
+          >
             Add Ingredient
           </button>
         </div>
@@ -76,7 +80,9 @@ function NewRecipeForm() {
             required
           />
         </div>
-        <button className="add-recipe-button" type="submit">Add Recipe</button>
+        <button className="add-recipe-button" type="submit">
+          Add Recipe
+        </button>
       </form>
     </div>
   );
