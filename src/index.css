@@ -85,8 +85,8 @@ p.card-ingred {
   text-align: center;
 }
 
-.form-side{
-  padding: 3%;
+.search-side{
+  padding: 5px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
   background-color: white;
@@ -95,12 +95,52 @@ p.card-ingred {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.search-side{
-  padding: 3%;
+.recipe-index-page{
+  margin-top: 2%;
+}
+
+#searchBar{
+  text-align: center;
+  border-radius: 20px;
+}
+
+
+/* Form CSS */
+.form-side{
+  padding: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
   background-color: white;
   margin: 1%;
   border-radius: 20px;
   font-family: 'Times New Roman', Times, serif;
+}
+.app-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px; 
+  margin-bottom: 10px; 
+}
+.form-row-left {
+  flex: 1;
+  margin-right: 10px; 
+}
+.form-row-right {
+  flex: 1;
+  margin-left: 10px; 
+}
+.add-recipe-button{
+  background-color: bisque;
+}
+.input-ingr{
+  text-align: center;
+}
+.input-step{
+  text-align: center;
 }
