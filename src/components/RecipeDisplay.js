@@ -10,7 +10,7 @@ function RecipeDisplay({ recipe, onClose }) {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6 col-md-6">
+        <div className="col-lg-3 col-md-3">
           <div className="ingredient-box">
             <h3>Ingredients:</h3>
             <ul className="list-unstyled">
