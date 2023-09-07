@@ -52,13 +52,13 @@ code {
 }
 
 .card-photo {
-  max-height: 100px; 
+  max-height: 100px;
   overflow: hidden;
 }
 
 .card-image img {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
 }
 
 .card-content {
@@ -75,7 +75,14 @@ p.card-ingred {
   font-size: 1rem;
   color: black;
   text-align: center;
+}
 
+
+.ingredient-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .form-side{

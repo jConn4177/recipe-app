@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import RecipeIndex from "./RecipeIndex";
 
 function RecipePage() {
-  const [searchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   return (
-    <div className="recipe-page">
-      
-      <RecipeIndex searchInput={searchInput} />
+    <div>
+      <Header
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        isCollapsed={isHeaderCollapsed}
+      />
+      <RecipeIndex
+        searchInput={searchInput}
+        setIsHeaderCollapsed={setIsHeaderCollapsed}
+      />
     </div>
   );
 }
