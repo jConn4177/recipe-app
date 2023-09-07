@@ -23,7 +23,11 @@ function RecipeDisplay({ recipe, onClose }) {
         <div className="col-lg-6 col-md-6">
           <div className="instruction-box">
             <h3>Instructions:</h3>
-            <p>{recipe.instructions}</p>
+            <ol>
+              {recipe.instructions.map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>
