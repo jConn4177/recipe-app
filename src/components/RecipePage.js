@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import RecipeIndex from "./RecipeIndex";
 
 function RecipePage() {

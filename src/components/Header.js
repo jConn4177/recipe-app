@@ -4,16 +4,12 @@ import NewRecipeForm from "./NewRecipeForm";
 
 function Header({ searchInput, setSearchInput, isCollapsed }) {
   return (
-    <div
-      className="row g-5"
-      id="header"
-      style={{ display: isCollapsed ? "none" : "" }}
-    >
-      <div className="col">
-        <Search searchInput={searchInput} setSearchInput={setSearchInput} />
+    <div className="header-page">
+      <div className="form-side">
+      <NewRecipeForm/>
       </div>
-      <div className="col">
-        <NewRecipeForm />
+      <div className="search-side">
+      <Search searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>
     </div>
   );

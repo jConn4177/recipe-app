@@ -38,9 +38,9 @@ function NewRecipeForm() {
   };
 
   return (
-    <div>
-      <h2>Add a New Recipe</h2>
-      <form onSubmit={handleSubmit} className="app-form">
+    <div className="app-form">
+      <h2 className="form-title">Add a New Recipe</h2>
+      <form onSubmit={handleSubmit} >
         <div>
           <label htmlFor="name">Recipe Name:</label>
           <input
