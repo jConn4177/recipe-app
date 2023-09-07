@@ -10,7 +10,13 @@ function RecipeIndex({ searchInput }) {
   }, []);
 
   const searchedRecipes = recipes.filter((recipe) => {
-    return recipe.name.toLowerCase().includes(searchInput.toLowerCase());
+    const searchTerm = searchInput.toLowerCase();
+    return (
+      recipe.name.toLowerCase().includes(searchTerm) ||
+      recipe.ingredients.some((ingredient) =>
+        ingredient.toLowerCase().includes(searchTerm)
+      )
+    );
   });
 
   const recipeCards = searchedRecipes.map((recipe) => {
