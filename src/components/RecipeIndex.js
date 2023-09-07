@@ -31,14 +31,14 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
   };
 
   return (
-    <div>
+    <div className="recipe-index-page">
       {selectedRecipe ? (
         <RecipeDisplay
           recipe={selectedRecipe}
           onClose={() => {
             setSelectedRecipe(null);
             setIsHeaderCollapsed(false);
-          }} // Pass a function to close RecipeDisplay
+          }} 
         />
       ) : (
         <div className="row g-3 d-flex">
@@ -50,7 +50,7 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
                   name={recipe.name}
                   image={recipe.image}
                   ingredients={recipe.ingredients.join(", ")}
-                  onClick={() => handleRecipeClick(recipe)} // Pass a function to handle clicks
+                  onClick={() => handleRecipeClick(recipe)} 
                 />
               </div>
             </div>
