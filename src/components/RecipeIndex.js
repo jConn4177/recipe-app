@@ -35,15 +35,19 @@ function RecipeIndex({ searchInput }) {
           onClose={() => setSelectedRecipe(null)} // Pass a function to close RecipeDisplay
         />
       ) : (
-        searchedRecipes.map((recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            name={recipe.name}
-            image={recipe.image}
-            ingredients={recipe.ingredients}
-            onClick={() => handleRecipeClick(recipe)} // Pass a function to handle clicks
-          />
-        ))
+        <div className="row">
+          {searchedRecipes.map((recipe) => (
+            <div className="col-2">
+              <RecipeCard
+                key={recipe.id}
+                name={recipe.name}
+                image={recipe.image}
+                ingredients={recipe.ingredients.join(", ")}
+                onClick={() => handleRecipeClick(recipe)} // Pass a function to handle clicks
+              />
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
