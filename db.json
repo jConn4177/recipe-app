@@ -37,7 +37,16 @@
     {
       "id": 2,
       "name": "Chicken Adobo",
-      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "instructions": [
+        "Combine Chicken and Marinade ingredients, marinate 20+ min.",
+        "Heat 1 tbsp oil in skillet, sear chicken briefly (1 min/side).",
+        "Remove chicken, set aside.",
+        "Heat remaining oil, add garlic, onion, cook 1.5 min.",
+        "Add reserved marinade, water, sugar, pepper. Simmer 5 min.",
+        "Add chicken, simmer 20-25 min until sauce thickens.",
+        "If sauce is thin, simmer alone until thick. Coat chicken in glaze.",
+        "Serve over rice with optional sides."
+      ],
       "ingredients": [
         "chicken thighs",
         "soy sauce",
@@ -54,33 +63,45 @@
     {
       "id": 3,
       "name": "Shrimp Fried Rice",
-      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "instructions": [
+        "Mix Sauce ingredients, set aside.",
+        "Heat 1 tbsp oil in wok over medium heat. Scramble eggs, remove.",
+        "Increase heat, cook bacon until golden (about 2 min), remove.",
+        "Drain excess bacon fat.",
+        "Add 2 tbsp oil, garlic, ginger. Return wok to high heat. Stir-fry, don't burn. When garlic sizzles, add onion, stir-fry 2 min until golden.",
+        "Add Chinese wine, sugar, simmer briefly (20 sec), mostly evaporate.",
+        "Add prawns/shrimp, stir-fry 1 min (or longer if raw).",
+        "Add rice, Sauce, eggs, bacon, most shallots/scallions. Stir-fry 2 min until hot.",
+        "Transfer to plate, sprinkle with remaining scallions. Serve."
+      ],
       "ingredients": [
         "oyster sauce",
         "rice",
         "ginger",
-        "garlic",
-        "msg",
+        "shaoxing wine",
         "soy sauce",
         "shrimp",
-        "rice",
         "green onion",
         "onion",
         "garlic",
-        "carrot",
-        "celery",
-        "cilantro",
         "egg",
         "vegetable oil",
-        "sesame seeds",
-        "sesame oil"
+        "sugar",
+        "sesame oil",
+        "bacon"
       ],
       "image": "https://images.unsplash.com/photo-1551326844-4df70f78d0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80"
     },
     {
       "id": 4,
       "name": "BLT Sandwich",
-      "instructions": "lorem ipsum dolor sit amet, consectetur adipiscing",
+      "instructions": [
+        "Cook the bacon",
+        "Toast the bread.",
+        "Slice the tomato.",
+        "Put all the ingredients between the two slices of toasted bread.",
+        "Bon Appétit."
+      ],
       "ingredients": ["bread", "bacon", "lettuce", "tomato", "mayonnaise"],
       "image": "https://images.unsplash.com/photo-1619096252214-ef06c45683e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1925&q=80"
     }
