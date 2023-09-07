@@ -9,12 +9,11 @@ function RecipeIndex({ searchInput }) {
       .then(setRecipes);
   }, []);
 
-  // const searchedRecipes = recipes.filter((recipe) => {
-  //   return recipe.name.toLowerCase().includes(searchInput.toLowerCase());
-  // });
+  const searchedRecipes = recipes.filter((recipe) => {
+    return recipe.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
 
-  console.log(recipes);
-  const recipeCards = recipes.map((recipe) => {
+  const recipeCards = searchedRecipes.map((recipe) => {
     return (
       <RecipeCard
         key={recipe.id}
