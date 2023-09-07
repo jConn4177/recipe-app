@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Times New Roman', Times, serif
+  font-family: "Times New Roman", Times, serif;
 }
 
-.App{
+.App {
   background-color: bisque;
 }
 
@@ -23,7 +23,7 @@ code {
   box-shadow: 0px 0px 10px black;
   margin-bottom: 2%;
   font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bold;
 }
 
@@ -42,9 +42,9 @@ code {
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0px 0px 10px black;
-  display: flex; 
-  flex-direction: column; 
-  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .card:hover {
@@ -77,7 +77,6 @@ p.card-ingred {
   text-align: center;
 }
 
-
 .ingredient-box {
   border: 1px solid #ccc;
   padding: 10px;
@@ -85,35 +84,34 @@ p.card-ingred {
   text-align: center;
 }
 
-.search-side{
+.search-side {
   padding: 5px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
   background-color: white;
   margin: 1%;
   border-radius: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.recipe-index-page{
+.recipe-index-page {
   margin-top: 2%;
 }
 
-#searchBar{
+#searchBar {
   text-align: center;
   border-radius: 20px;
 }
 
-
 /* Form CSS */
-.form-side{
+.form-side {
   padding: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
   background-color: white;
   margin: 1%;
   border-radius: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 .app-form {
   display: flex;
@@ -124,23 +122,41 @@ p.card-ingred {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 500px; 
-  margin-bottom: 10px; 
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 .form-row-left {
   flex: 1;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 .form-row-right {
   flex: 1;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
-.add-recipe-button{
+.add-recipe-button {
   background-color: bisque;
 }
-.input-ingr{
+.input-ingr {
   text-align: center;
 }
-.input-step{
+.input-step {
   text-align: center;
+}
+
+.custom-border {
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px black;
+}
+
+#instructions-div-container {
+  background-color: white;
+}
+
+#ingredients-div-container {
+  background-color: white;
+}
+
+.image-border {
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px black;
 }
