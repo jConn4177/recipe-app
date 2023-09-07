@@ -4,9 +4,13 @@ import NewRecipeForm from "./NewRecipeForm";
 
 function Header({ searchInput, setSearchInput }) {
   return (
-    <div id="header">
-      <Search searchInput={searchInput} setSearchInput={setSearchInput} />
-      <NewRecipeForm />
+    <div className="row" id="header">
+      <div className="col">
+        <Search searchInput={searchInput} setSearchInput={setSearchInput} />
+      </div>
+      <div className="col">
+        <NewRecipeForm />
+      </div>
     </div>
   );
 }
