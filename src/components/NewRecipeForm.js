@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import NewRecipeFormName from "./NewRecipeFormName";
 
-function NewRecipeForm({ onRecipeSubmit, isFormCollapsed, setIsFormCollapsed, isCollapsed }) {
+function NewRecipeForm({
+  onRecipeSubmit,
+  isFormCollapsed,
+  setIsFormCollapsed,
+  isCollapsed,
+}) {
   const [formData, setFormData] = useState({
     name: "",
     ingredients: [""],
@@ -82,109 +88,107 @@ function NewRecipeForm({ onRecipeSubmit, isFormCollapsed, setIsFormCollapsed, is
   };
 
   return (
-    <div style={{ display: isCollapsed ? "none" : "" }} className={`app-form ${isFormCollapsed ? "form-collapsed" : ""}`}>
+    <div
+      style={{ display: isCollapsed ? "none" : "" }}
+      className={`app-form ${isFormCollapsed ? "form-collapsed" : ""}`}
+    >
       <h2 className="form-title">Add a New Recipe</h2>
       {!isFormCollapsed && (
         <>
-      <form onSubmit={handleSubmit} className="form-inputs">
-        <div className="form-row">
-          <div className="form-row-left">
-            <div className="form-input">
-              <label htmlFor="recipeNameInput">Recipe Name:</label>
-              <input
-                type="text"
-                id="recipeNameInput"
-                name="name"
-                value={recipeName}
-                onChange={(e) => setRecipeName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-input">
-              <label htmlFor="recipeInstructionsInput">Instructions:</label>
-              {formData.instructions.map((instruction, index) => (
-                <div key={index}>
-                  <textarea
-                    type="text"
-                    id="recipeInstructionsInput"
-                    className="input-step"
-                    placeholder="Add a Step..."
-                    value={instruction}
-                    onChange={(e) =>
-                      handleInstructionChange(index, e.target.value)
-                    }
-                  />
-                  {formData.instructions.length > 1 && (
-                    <button
-                      className="remove-inst-button"
-                      type="button"
-                      onClick={() => handleRemoveItem("instructions", index)}
-                    >
-                      Remove Step
-                    </button>
-                  )}
+          <form onSubmit={handleSubmit} className="form-inputs">
+            <div className="form-row">
+              <div className="form-row-left">
+                <NewRecipeFormName
+                  recipeName={recipeName}
+                  setRecipeName={setRecipeName}
+                />
+                <div className="form-input">
+                  <label htmlFor="recipeInstructionsInput">Instructions:</label>
+                  {formData.instructions.map((instruction, index) => (
+                    <div key={index}>
+                      <textarea
+                        type="text"
+                        id="recipeInstructionsInput"
+                        className="input-step"
+                        placeholder="Add a Step..."
+                        value={instruction}
+                        onChange={(e) =>
+                          handleInstructionChange(index, e.target.value)
+                        }
+                      />
+                      {formData.instructions.length > 1 && (
+                        <button
+                          className="remove-inst-button"
+                          type="button"
+                          onClick={() =>
+                            handleRemoveItem("instructions", index)
+                          }
+                        >
+                          Remove Step
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    className="add-inst-button"
+                    type="button"
+                    onClick={() => handleAddItem("instructions")}
+                  >
+                    Add Next Step
+                  </button>
                 </div>
-              ))}
-              <button
-                className="add-inst-button"
-                type="button"
-                onClick={() => handleAddItem("instructions")}
-              >
-                Add Next Step
-              </button>
-            </div>
-          </div>
-          <div className="form-row-right">
-            <div className="form-input">
-              <label htmlFor="recipeIngredientsInput">Ingredients:</label>
-              {formData.ingredients.map((ingredient, index) => (
-                <div key={index}>
+              </div>
+              <div className="form-row-right">
+                <div className="form-input">
+                  <label htmlFor="recipeIngredientsInput">Ingredients:</label>
+                  {formData.ingredients.map((ingredient, index) => (
+                    <div key={index}>
+                      <input
+                        id="recipeIngredientsInput"
+                        className="input-ingr"
+                        placeholder="Add an Ingredient..."
+                        type="text"
+                        value={ingredient}
+                        onChange={(e) =>
+                          handleIngredientChange(index, e.target.value)
+                        }
+                      />
+                      {formData.ingredients.length > 1 && (
+                        <button
+                          className="remove-ing-button"
+                          type="button"
+                          onClick={() => handleRemoveItem("ingredients", index)}
+                        >
+                          Remove Ingredient
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    className="add-ing-button"
+                    type="button"
+                    onClick={() => handleAddItem("ingredients")}
+                  >
+                    Add Next Ingredient
+                  </button>
+                </div>
+                <div className="form-input">
+                  <label htmlFor="recipeImageUrlInput">Image URL:</label>
                   <input
-                    id="recipeIngredientsInput"
-                    className="input-ingr"
-                    placeholder="Add an Ingredient..."
                     type="text"
-                    value={ingredient}
-                    onChange={(e) =>
-                      handleIngredientChange(index, e.target.value)
-                    }
+                    id="recipeImageUrlInput"
+                    name="imageUrl"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
                   />
-                  {formData.ingredients.length > 1 && (
-                    <button
-                      className="remove-ing-button"
-                      type="button"
-                      onClick={() => handleRemoveItem("ingredients", index)}
-                    >
-                      Remove Ingredient
-                    </button>
-                  )}
                 </div>
-              ))}
-              <button
-                className="add-ing-button"
-                type="button"
-                onClick={() => handleAddItem("ingredients")}
-              >
-                Add Next Ingredient
-              </button>
+              </div>
             </div>
-            <div className="form-input">
-              <label htmlFor="recipeImageUrlInput">Image URL:</label>
-              <input
-                type="text"
-                id="recipeImageUrlInput"
-                name="imageUrl"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-        <button className="btn add-recipe-button" type="submit">
-          Add Recipe
-        </button>
-      </form>
-      </>
+            <button className="btn add-recipe-button" type="submit">
+              Add Recipe
+            </button>
+          </form>
+        </>
       )}
       <button
         className="toggle-form-button"
