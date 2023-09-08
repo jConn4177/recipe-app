@@ -183,3 +183,71 @@ p.card-ingred {
   background-color: #d2b48cd7; /* same as hover border color */
   border-color: #b8860b; /* slightly darker shade for active border */
 }
+
+.toggle-form-button {
+  background-color: white;
+  border-radius: 10%;
+  border-color: bisque;
+}
+.toggle-form-button:hover {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.toggle-form-button:active {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+
+.add-inst-button {
+  background-color: white;
+  border-radius: 10%;
+  border-color: bisque;
+}
+.add-inst-button:hover {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.add-inst-button:active {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.remove-inst-button {
+  background-color: white;
+  border-radius: 10%;
+  border-color: transparent;
+}
+.remove-inst-button:hover {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.remove-inst-button:active {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+
+.add-ing-button {
+  background-color: white;
+  border-radius: 10%;
+  border-color: bisque;
+}
+.add-ing-button:hover {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.add-ing-button:active {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.remove-ing-button {
+  background-color: white;
+  border-radius: 10%;
+  border-color: transparent;
+}
+.remove-ing-button:hover {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}
+.remove-ing-button:active {
+  background-color: #d2b48cd7; 
+  border-color: #b8860b; 
+}

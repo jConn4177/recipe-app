@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewRecipeForm({ onRecipeSubmit }) {
+function NewRecipeForm({ onRecipeSubmit, isFormCollapsed, setIsFormCollapsed, isCollapsed }) {
   const [formData, setFormData] = useState({
     name: "",
     ingredients: [""],
@@ -74,8 +74,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
         });
         setImageUrl("");
 
-        // Call the onRecipeSubmit function to add the new recipe to the recipes state
-        onRecipeSubmit(newRecipe); // Add this line
+        onRecipeSubmit(newRecipe);
       } else {
         console.error("Failed to submit recipe");
       }
@@ -85,8 +84,10 @@ function NewRecipeForm({ onRecipeSubmit }) {
   };
 
   return (
-    <div className="app-form">
+    <div style={{ display: isCollapsed ? "none" : "" }} className={`app-form ${isFormCollapsed ? "form-collapsed" : ""}`}>
       <h2 className="form-title">Add a New Recipe</h2>
+      {!isFormCollapsed && (
+        <>
       <form onSubmit={handleSubmit} className="form-inputs">
         <div className="form-row">
           <div className="form-row-left">
@@ -186,6 +187,15 @@ function NewRecipeForm({ onRecipeSubmit }) {
           Add Recipe
         </button>
       </form>
+      </>
+      )}
+      <button
+        className="toggle-form-button"
+        type="button"
+        onClick={() => setIsFormCollapsed(!isFormCollapsed)}
+      >
+        {isFormCollapsed ? "Open Form" : "Close Form"}
+      </button>
     </div>
   );
 }
