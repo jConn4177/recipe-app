@@ -181,7 +181,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
             </div>
           </div>
         </div>
-        <button className="add-recipe-button" type="submit">
+        <button className="btn add-recipe-button" type="submit">
           Add Recipe
         </button>
       </form>
