@@ -44,7 +44,10 @@ function RecipeDisplay({ recipe, onClose }) {
           <div className="instruction-box bg-white">
             <ol>
               {recipe.instructions.map((instruction, index) => (
-                <li key={index}>{instruction}</li>
+                <>
+                  <li key={index}>{instruction}</li>
+                  <br></br>
+                </>
               ))}
             </ol>
           </div>
