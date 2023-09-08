@@ -8,6 +8,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
   });
 
   const [imageUrl, setImageUrl] = useState("");
+  const [recipeName, setRecipeName] = useState("");
 
   const handleChange = (e) => {
     const { key, value } = e.target;
@@ -49,7 +50,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
     e.preventDefault();
 
     const newRecipe = {
-      name: formData.name,
+      name: recipeName,
       ingredients: formData.ingredients,
       instructions: formData.instructions,
       image: imageUrl,
@@ -95,8 +96,8 @@ function NewRecipeForm({ onRecipeSubmit }) {
                 type="text"
                 id="recipeNameInput"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
+                value={recipeName}
+                onChange={(e) => setRecipeName(e.target.value)}
                 required
               />
             </div>
