@@ -6,6 +6,8 @@ import NewRecipeForm from "./NewRecipeForm";
 function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [isFormCollapsed, setIsFormCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:8001/recipes")
@@ -29,10 +31,13 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
   const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe);
     setIsHeaderCollapsed(true);
+    setIsCollapsed(true);
   };
 
   const handleRecipeSubmit = (newRecipe) => {
     setRecipes([...recipes, newRecipe]);
+    setIsFormCollapsed(false);
+    setIsCollapsed(false);
   };
 
   return (
@@ -43,6 +48,7 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
           onClose={() => {
             setSelectedRecipe(null);
             setIsHeaderCollapsed(false);
+            setIsCollapsed(false);
           }}
         />
       ) : (
@@ -62,7 +68,12 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
           ))}
         </div>
       )}
-      <NewRecipeForm onRecipeSubmit={handleRecipeSubmit} />
+      <NewRecipeForm
+        onRecipeSubmit={handleRecipeSubmit}
+        isFormCollapsed={isFormCollapsed}
+        setIsFormCollapsed={setIsFormCollapsed}
+        isCollapsed={isCollapsed}
+      />
     </div>
   );
 }
