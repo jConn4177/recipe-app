@@ -10,14 +10,12 @@ function NewRecipeForm({ onRecipeSubmit, isFormCollapsed, setIsFormCollapsed, is
   const [imageUrl, setImageUrl] = useState("");
   const [recipeName, setRecipeName] = useState("");
 
-  const handleChange = (e) => {
-    const { key, value } = e.target;
+  const handleInstructionChange = (index, value) => {
+    const updatedInstructions = [...formData.instructions];
+    updatedInstructions[index] = value;
     setFormData({
       ...formData,
-      [key]:
-        key === "ingredients" || key === "instructions"
-          ? value.split("\n")
-          : value,
+      instructions: updatedInstructions,
     });
   };
 
@@ -107,14 +105,13 @@ function NewRecipeForm({ onRecipeSubmit, isFormCollapsed, setIsFormCollapsed, is
               {formData.instructions.map((instruction, index) => (
                 <div key={index}>
                   <textarea
+                    type="text"
                     id="recipeInstructionsInput"
                     className="input-step"
                     placeholder="Add a Step..."
                     value={instruction}
                     onChange={(e) =>
-                      handleChange({
-                        target: { key: "instructions", value: e.target.value },
-                      })
+                      handleInstructionChange(index, e.target.value)
                     }
                   />
                   {formData.instructions.length > 1 && (
