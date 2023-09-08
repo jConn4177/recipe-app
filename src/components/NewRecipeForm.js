@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NewRecipeFormName from "./NewRecipeFormName";
+import NewRecipeFormInstructions from "./NewRecipeFormInstructions";
 
 function NewRecipeForm({
   onRecipeSubmit,
@@ -102,41 +103,12 @@ function NewRecipeForm({
                   recipeName={recipeName}
                   setRecipeName={setRecipeName}
                 />
-                <div className="form-input">
-                  <label htmlFor="recipeInstructionsInput">Instructions:</label>
-                  {formData.instructions.map((instruction, index) => (
-                    <div key={index}>
-                      <textarea
-                        type="text"
-                        id="recipeInstructionsInput"
-                        className="input-step"
-                        placeholder="Add a Step..."
-                        value={instruction}
-                        onChange={(e) =>
-                          handleInstructionChange(index, e.target.value)
-                        }
-                      />
-                      {formData.instructions.length > 1 && (
-                        <button
-                          className="remove-inst-button"
-                          type="button"
-                          onClick={() =>
-                            handleRemoveItem("instructions", index)
-                          }
-                        >
-                          Remove Step
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                  <button
-                    className="add-inst-button"
-                    type="button"
-                    onClick={() => handleAddItem("instructions")}
-                  >
-                    Add Next Step
-                  </button>
-                </div>
+                <NewRecipeFormInstructions
+                  formData={formData}
+                  handleInstructionChange={handleInstructionChange}
+                  handleRemoveItem={handleRemoveItem}
+                  handleAddItem={handleAddItem}
+                />
               </div>
               <div className="form-row-right">
                 <div className="form-input">
