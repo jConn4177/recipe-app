@@ -6,6 +6,7 @@ function NewRecipeFormName({ recipeName, setRecipeName }) {
       <label htmlFor="recipeNameInput">Recipe Name:</label>
       <input
         type="text"
+        placeholder="Choose a Recipe Name..."
         id="recipeNameInput"
         name="name"
         value={recipeName}

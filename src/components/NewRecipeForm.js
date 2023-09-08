@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NewRecipeFormName from "./NewRecipeFormName";
 import NewRecipeFormInstructions from "./NewRecipeFormInstructions";
 import NewRecipeFormIngredients from "./NewRecipeFormIngredients";
+import NewRecipeFormImage from "./NewRecipeFormImage";
 
 function NewRecipeForm({
   onRecipeSubmit,
@@ -74,11 +75,11 @@ function NewRecipeForm({
       if (response.ok) {
         console.log("Recipe submitted successfully");
         setFormData({
-          name: "",
           ingredients: [""],
           instructions: [""],
         });
         setImageUrl("");
+        setRecipeName("");
 
         onRecipeSubmit(newRecipe);
       } else {
@@ -118,16 +119,10 @@ function NewRecipeForm({
                   handleRemoveItem={handleRemoveItem}
                   handleAddItem={handleAddItem}
                 />
-                <div className="form-input">
-                  <label htmlFor="recipeImageUrlInput">Image URL:</label>
-                  <input
-                    type="text"
-                    id="recipeImageUrlInput"
-                    name="imageUrl"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
-                  />
-                </div>
+                <NewRecipeFormImage
+                  imageUrl={imageUrl}
+                  setImageUrl={setImageUrl}
+                />
               </div>
             </div>
             <button className="btn add-recipe-button" type="submit">
