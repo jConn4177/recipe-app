@@ -10,10 +10,13 @@ function NewRecipeForm({ onRecipeSubmit }) {
   const [imageUrl, setImageUrl] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { key, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "ingredients" || name === "instructions" ? value.split("\n") : value,
+      [key]:
+        key === "ingredients" || key === "instructions"
+          ? value.split("\n")
+          : value,
     });
   };
 
@@ -87,10 +90,10 @@ function NewRecipeForm({ onRecipeSubmit }) {
         <div className="form-row">
           <div className="form-row-left">
             <div className="form-input">
-              <label htmlFor="name">Recipe Name:</label>
+              <label htmlFor="recipeNameInput">Recipe Name:</label>
               <input
                 type="text"
-                id="name"
+                id="recipeNameInput"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -98,16 +101,17 @@ function NewRecipeForm({ onRecipeSubmit }) {
               />
             </div>
             <div className="form-input">
-              <label htmlFor="instructions">Instructions:</label>
+              <label htmlFor="recipeInstructionsInput">Instructions:</label>
               {formData.instructions.map((instruction, index) => (
                 <div key={index}>
                   <textarea
+                    id="recipeInstructionsInput"
                     className="input-step"
                     placeholder="Add a Step..."
                     value={instruction}
                     onChange={(e) =>
                       handleChange({
-                        target: { name: "instructions", value: e.target.value },
+                        target: { key: "instructions", value: e.target.value },
                       })
                     }
                   />
@@ -133,15 +137,18 @@ function NewRecipeForm({ onRecipeSubmit }) {
           </div>
           <div className="form-row-right">
             <div className="form-input">
-              <label htmlFor="ingredients">Ingredients:</label>
+              <label htmlFor="recipeIngredientsInput">Ingredients:</label>
               {formData.ingredients.map((ingredient, index) => (
                 <div key={index}>
                   <input
+                    id="recipeIngredientsInput"
                     className="input-ingr"
                     placeholder="Add an Ingredient..."
                     type="text"
                     value={ingredient}
-                    onChange={(e) => handleIngredientChange(index, e.target.value)}
+                    onChange={(e) =>
+                      handleIngredientChange(index, e.target.value)
+                    }
                   />
                   {formData.ingredients.length > 1 && (
                     <button
@@ -163,10 +170,10 @@ function NewRecipeForm({ onRecipeSubmit }) {
               </button>
             </div>
             <div className="form-input">
-              <label htmlFor="imageUrl">Image URL:</label>
+              <label htmlFor="recipeImageUrlInput">Image URL:</label>
               <input
                 type="text"
-                id="imageUrl"
+                id="recipeImageUrlInput"
                 name="imageUrl"
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
@@ -174,7 +181,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
             </div>
           </div>
         </div>
-        <button className="add-recipe-button" type="submit">
+        <button className="btn add-recipe-button" type="submit">
           Add Recipe
         </button>
       </form>
