@@ -102,57 +102,8 @@
         "Put all the ingredients between the two slices of toasted bread.",
         "Bon Appétit."
       ],
-      "ingredients": [
-        "bread",
-        "bacon",
-        "lettuce",
-        "tomato",
-        "mayonnaise"
-      ],
+      "ingredients": ["bread", "bacon", "lettuce", "tomato", "mayonnaise"],
       "image": "https://images.unsplash.com/photo-1619096252214-ef06c45683e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1925&q=80"
-    },
-    {
-      "name": "Good Old-Fashioned Pancakes",
-      "ingredients": [
-        "flour",
-        "backing powder",
-        "salt",
-        "milk",
-        "butter",
-        "egg",
-        "sugar"
-      ],
-      "instructions": [
-        "1. Sift the dry ingredients together.",
-        "2. Make a well, then add the wet ingredients. Stir to combine.",
-        "3. Scoop the batter onto a hot griddle or pan.",
-        "4. Cook for two to three minutes, then flip.",
-        "5. Continue cooking until brown on both sides."
-      ],
-      "image": "https://www.allrecipes.com/thmb/kvvETNZfOtAptH69gUsK6FaKRKA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/21014-Good-old-Fashioned-Pancakes-mfs_001-1fa26bcdedc345f182537d95b6cf92d8.jpg",
-      "id": 5
-    },
-    {
-      "name": "Spaghetti with Tomato Sauce",
-      "ingredients": [
-        "olive oil",
-        "garlic cloves",
-        "salt",
-        "red pepper flakes",
-        "canned tomatoes",
-        "basil",
-        "spaghetti",
-        "parmesan cheese",
-        "water"
-      ],
-      "instructions": [
-        "Cook the oil, garlic, 1/2 teaspoon salt and pepper flakes in a large skillet over medium heat, stirring, until the oil heats up and the garlic just starts to turn golden, 4 to 6 minutes.",
-        "Add the tomatoes; rinse the can with about 1 cup of water, and add the water to the skillet. Add the basil, raise the heat to medium-high and simmer until the sauce thickens, 15 to 20 minutes.",
-        "Meanwhile, add the spaghetti to the boiling water, and cook according to package directions; strain well.",
-        "Add the cooked spaghetti to the sauce, and stir to coat. Serve with Parmesan if desired."
-      ],
-      "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/7/17/1/FN_Simple-Spaghetti-with-Tomato-Sauce_s4x3.jpg.rend.hgtvcom.826.620.suffix/1408069256188.jpeg",
-      "id": 6
     }
   ]
 }
