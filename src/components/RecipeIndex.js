@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeCard from "./RecipeCard";
 import RecipeDisplay from "./RecipeDisplay";
+import NewRecipeForm from "./NewRecipeForm"; 
 
 function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
   const [recipes, setRecipes] = useState([]);
@@ -30,6 +31,10 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
     setIsHeaderCollapsed(true);
   };
 
+  const handleRecipeSubmit = (newRecipe) => {
+    setRecipes([...recipes, newRecipe]);
+  };
+
   return (
     <div className="recipe-index-page">
       {selectedRecipe ? (
@@ -38,7 +43,7 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
           onClose={() => {
             setSelectedRecipe(null);
             setIsHeaderCollapsed(false);
-          }} 
+          }}
         />
       ) : (
         <div className="row g-3 d-flex">
@@ -50,13 +55,14 @@ function RecipeIndex({ searchInput, setIsHeaderCollapsed }) {
                   name={recipe.name}
                   image={recipe.image}
                   ingredients={recipe.ingredients.join(", ")}
-                  onClick={() => handleRecipeClick(recipe)} 
+                  onClick={() => handleRecipeClick(recipe)}
                 />
               </div>
             </div>
           ))}
         </div>
       )}
+      <NewRecipeForm onRecipeSubmit={handleRecipeSubmit} />
     </div>
   );
 }

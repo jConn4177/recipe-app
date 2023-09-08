@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function NewRecipeForm() {
-  const [recipe, setRecipe] = useState({
+function NewRecipeForm({ onRecipeSubmit }) {
+  const [formData, setFormData] = useState({
     name: "",
     ingredients: [""],
     instructions: [""],
@@ -11,71 +11,73 @@ function NewRecipeForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "ingredients") {
-      setRecipe({ ...recipe, [name]: value.split(",") });
-    } else if (name === "instructions") {
-      setRecipe({ ...recipe, [name]: value.split("\n") });
-    } else {
-      setRecipe({ ...recipe, [name]: value });
-    }
+    setFormData({
+      ...formData,
+      [name]: name === "ingredients" || name === "instructions" ? value.split("\n") : value,
+    });
   };
 
-  const handleAddIngredient = () => {
-    setRecipe({ ...recipe, ingredients: [...recipe.ingredients, ""] });
+  const handleAddItem = (itemName) => {
+    setFormData({
+      ...formData,
+      [itemName]: [...formData[itemName], ""],
+    });
   };
 
-  const handleRemoveIngredient = (index) => {
-    const updatedIngredients = [...recipe.ingredients];
-    updatedIngredients.splice(index, 1);
-    setRecipe({ ...recipe, ingredients: updatedIngredients });
+  const handleRemoveItem = (itemName, index) => {
+    const updatedItems = [...formData[itemName]];
+    updatedItems.splice(index, 1);
+    setFormData({
+      ...formData,
+      [itemName]: updatedItems,
+    });
   };
 
   const handleIngredientChange = (index, value) => {
-    const updatedIngredients = [...recipe.ingredients];
+    const updatedIngredients = [...formData.ingredients];
     updatedIngredients[index] = value;
-    setRecipe({ ...recipe, ingredients: updatedIngredients });
+    setFormData({
+      ...formData,
+      ingredients: updatedIngredients,
+    });
   };
 
-  const handleAddInstruction = () => {
-    setRecipe({ ...recipe, instructions: [...recipe.instructions, ""] });
-  };
-
-  const handleRemoveInstruction = (index) => {
-    const updatedInstructions = [...recipe.instructions];
-    updatedInstructions.splice(index, 1);
-    setRecipe({ ...recipe, instructions: updatedInstructions });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newRecipe = {
-      name: recipe.name,
-      ingredients: recipe.ingredients,
-      instructions: recipe.instructions,
+      name: formData.name,
+      ingredients: formData.ingredients,
+      instructions: formData.instructions,
       image: imageUrl,
     };
 
-    fetch("http://localhost:8001/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newRecipe),
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Recipe submitted successfully");
-          setRecipe({
-            name: "",
-            ingredients: [""],
-            instructions: [""],
-          });
-          setImageUrl("");
-        } else {
-          console.error("Failed to submit recipe");
-        }
-      })
+    try {
+      const response = await fetch("http://localhost:8001/recipes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newRecipe),
+      });
+
+      if (response.ok) {
+        console.log("Recipe submitted successfully");
+        setFormData({
+          name: "",
+          ingredients: [""],
+          instructions: [""],
+        });
+        setImageUrl("");
+
+        // Call the onRecipeSubmit function to add the new recipe to the recipes state
+        onRecipeSubmit(newRecipe); // Add this line
+      } else {
+        console.error("Failed to submit recipe");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
@@ -84,24 +86,24 @@ function NewRecipeForm() {
       <form onSubmit={handleSubmit} className="form-inputs">
         <div className="form-row">
           <div className="form-row-left">
-            <div className="add-name-input">
+            <div className="form-input">
               <label htmlFor="name">Recipe Name:</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                value={recipe.name}
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="add-inst-input">
+            <div className="form-input">
               <label htmlFor="instructions">Instructions:</label>
-              {recipe.instructions.map((instruction, index) => (
+              {formData.instructions.map((instruction, index) => (
                 <div key={index}>
                   <textarea
-                  className="input-step"
-                  placeholder="Add a Step..."
+                    className="input-step"
+                    placeholder="Add a Step..."
                     value={instruction}
                     onChange={(e) =>
                       handleChange({
@@ -109,11 +111,11 @@ function NewRecipeForm() {
                       })
                     }
                   />
-                  {recipe.instructions.length > 1 && (
+                  {formData.instructions.length > 1 && (
                     <button
                       className="remove-inst-button"
                       type="button"
-                      onClick={() => handleRemoveInstruction(index)}
+                      onClick={() => handleRemoveItem("instructions", index)}
                     >
                       Remove Step
                     </button>
@@ -123,29 +125,29 @@ function NewRecipeForm() {
               <button
                 className="add-inst-button"
                 type="button"
-                onClick={handleAddInstruction}
+                onClick={() => handleAddItem("instructions")}
               >
                 Add Next Step
               </button>
             </div>
           </div>
           <div className="form-row-right">
-            <div className="add-ingr-input">
+            <div className="form-input">
               <label htmlFor="ingredients">Ingredients:</label>
-              {recipe.ingredients.map((ingredient, index) => (
+              {formData.ingredients.map((ingredient, index) => (
                 <div key={index}>
                   <input
-                  className="input-ingr"
-                  placeholder="Add an Ingredient..."
+                    className="input-ingr"
+                    placeholder="Add an Ingredient..."
                     type="text"
                     value={ingredient}
                     onChange={(e) => handleIngredientChange(index, e.target.value)}
                   />
-                  {recipe.ingredients.length > 1 && (
+                  {formData.ingredients.length > 1 && (
                     <button
                       className="remove-ing-button"
                       type="button"
-                      onClick={() => handleRemoveIngredient(index)}
+                      onClick={() => handleRemoveItem("ingredients", index)}
                     >
                       Remove Ingredient
                     </button>
@@ -155,12 +157,12 @@ function NewRecipeForm() {
               <button
                 className="add-ing-button"
                 type="button"
-                onClick={handleAddIngredient}
+                onClick={() => handleAddItem("ingredients")}
               >
                 Add Next Ingredient
               </button>
             </div>
-            <div className="add-image-input">
+            <div className="form-input">
               <label htmlFor="imageUrl">Image URL:</label>
               <input
                 type="text"
