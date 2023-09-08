@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NewRecipeFormName from "./NewRecipeFormName";
 import NewRecipeFormInstructions from "./NewRecipeFormInstructions";
+import NewRecipeFormIngredients from "./NewRecipeFormIngredients";
 
 function NewRecipeForm({
   onRecipeSubmit,
@@ -111,39 +112,12 @@ function NewRecipeForm({
                 />
               </div>
               <div className="form-row-right">
-                <div className="form-input">
-                  <label htmlFor="recipeIngredientsInput">Ingredients:</label>
-                  {formData.ingredients.map((ingredient, index) => (
-                    <div key={index}>
-                      <input
-                        id="recipeIngredientsInput"
-                        className="input-ingr"
-                        placeholder="Add an Ingredient..."
-                        type="text"
-                        value={ingredient}
-                        onChange={(e) =>
-                          handleIngredientChange(index, e.target.value)
-                        }
-                      />
-                      {formData.ingredients.length > 1 && (
-                        <button
-                          className="remove-ing-button"
-                          type="button"
-                          onClick={() => handleRemoveItem("ingredients", index)}
-                        >
-                          Remove Ingredient
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                  <button
-                    className="add-ing-button"
-                    type="button"
-                    onClick={() => handleAddItem("ingredients")}
-                  >
-                    Add Next Ingredient
-                  </button>
-                </div>
+                <NewRecipeFormIngredients
+                  formData={formData}
+                  handleIngredientChange={handleIngredientChange}
+                  handleRemoveItem={handleRemoveItem}
+                  handleAddItem={handleAddItem}
+                />
                 <div className="form-input">
                   <label htmlFor="recipeImageUrlInput">Image URL:</label>
                   <input
