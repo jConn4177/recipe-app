@@ -4,13 +4,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.full-page{
+  background-color: bisque;
+}
 code {
   font-family: "Times New Roman", Times, serif;
 }
 
 .App {
   background-color: bisque;
+  margin-bottom: 5%;
 }
 
 .app-title {
@@ -82,6 +85,7 @@ p.card-ingred {
   padding: 10px;
   margin-bottom: 10px;
   text-align: center;
+
 }
 
 .search-side {
@@ -104,7 +108,10 @@ p.card-ingred {
 }
 
 /* Form CSS */
-.form-side {
+.app-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
@@ -112,11 +119,6 @@ p.card-ingred {
   margin: 1%;
   border-radius: 20px;
   font-family: "Times New Roman", Times, serif;
-}
-.app-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .form-row {
   display: flex;
